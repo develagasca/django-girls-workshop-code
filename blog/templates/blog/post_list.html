@@ -13,21 +13,13 @@
     <h1><a href="/">Django Girls Blog</a></h1>
   </div>
 
-  <div>
-    <p>published: 2019-09-21, 14:51</p>
-    <h2><a href="">First post</a></h2>
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus sed repellendus voluptates, suscipit eum ut alias quasi deleniti quia reiciendis nam repellat, fuga eos in vero consectetur error ex quos! Quam eum, fugiat ratione nemo, vel molestias soluta dolorum sed nobis asperiores amet debitis quaerat libero. Laudantium, minima ratione sed, qui cupiditate facere provident ut tempora molestias soluta id est. Molestiae, quibusdam. Est natus, vero nulla voluptatum nesciunt ullam impedit. Sunt, quasi. Ullam, ad. Facere vitae atque, reiciendis corporis dolorem dignissimos eum accusamus sequi quidem cumque facilis sit, omnis aspernatur!
-    </p>
-  </div>
-
-  <div>
-    <p>published: 2019-09-21, 14:53</p>
-    <h2><a href="">Second post</a></h2>
-    <p>
-      Debitis voluptatum laudantium doloremque quo! Exercitationem fugit provident illo asperiores neque quae inventore corporis! Laboriosam consequuntur maxime esse dolores perspiciatis eaque sunt neque odit autem, soluta assumenda exercitationem tempore tempora!
-    </p>
-  </div>
+  {% for post in posts %}
+    <div>
+      <p>published: {{ post.published_date }}</p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+  {% endfor %}
 
 </body>
 
